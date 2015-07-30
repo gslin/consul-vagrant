@@ -12,6 +12,15 @@ work() {
     wait
     unzip 0.5.2_linux_amd64.zip
     mv consul /usr/bin
+
+    local IP
+    IP=$(ifconfig eth1 | grep -E -o '192\.168\.50\.10[0-9]')
+
+    consul agent -data-dir /tmp/consul -bind="${IP}" &
+    sleep 1
+    consul join 192.168.50.101 || true
+    consul join 192.168.50.102 || true
+    consul join 192.168.50.103 || true
 }
 
 work > /tmp/boot.log 2>&1 &
