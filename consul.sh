@@ -3,10 +3,8 @@
 work() {
     sed -i -e 's/archive.ubuntu.com/jp.archive.ubuntu.com/' /etc/apt/sources.list
 
-    apt-get update
-    apt-get -y dist-upgrade
-
-    apt-get -y install unzip
+    apt-get -Vy update
+    apt-get -Vy install unzip
 
     cd /tmp
     wget https://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip
