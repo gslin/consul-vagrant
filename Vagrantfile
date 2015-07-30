@@ -19,6 +19,6 @@ Vagrant.configure(2) do |config|
     config.vm.define "consul3" do |c|
         c.vm.hostname = "consul3"
         c.vm.provision "shell", path: "consul.sh"
-        c.vm.network "private_network", ip: "192.168.50.102"
+        c.vm.network "private_network", ip: "192.168.50.103"
     end
 end
