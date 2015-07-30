@@ -6,5 +6,19 @@ Vagrant.configure(2) do |config|
 
     config.vm.define "consul1" do |c|
         c.vm.hostname = "consul1"
+        c.vm.provision "shell", path: "c1.sh"
+        c.vm.network "private_network", ip: "192.168.50.101"
+    end
+
+    config.vm.define "consul2" do |c|
+        c.vm.hostname = "consul2"
+        c.vm.provision "shell", path: "c2.sh"
+        c.vm.network "private_network", ip: "192.168.50.102"
+    end
+
+    config.vm.define "consul3" do |c|
+        c.vm.hostname = "consul3"
+        c.vm.provision "shell", path: "c3.sh"
+        c.vm.network "private_network", ip: "192.168.50.102"
     end
 end
