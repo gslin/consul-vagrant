@@ -16,7 +16,9 @@ work() {
     local IP
     IP=$(ifconfig eth1 | grep -E -o '192\.168\.50\.10[0-9]')
 
-    consul agent -data-dir /tmp/consul -bind="${IP}" &
+    mkdir /etc/consol.d
+
+    consul agent -data-dir /tmp/consul -config-dir /etc/consol.d -bind="${IP}" &
     sleep 1
     consul join 192.168.50.101 || true
     consul join 192.168.50.102 || true
