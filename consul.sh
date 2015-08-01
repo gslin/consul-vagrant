@@ -33,6 +33,26 @@ work() {
 }
 EOF
 
+    cat > /etc/consul.d/googledns.json <<EOF
+{
+    "services": [
+        {
+            "id": "googledns",
+            "name": "googledns",
+            "tags": ["master"],
+            "address": "8.8.8.8",
+            "port": 53,
+            "checks": [
+                {
+                    "script": "/usr/bin/host www.google.com 8.8.8.8",
+                    "interval": "5s"
+                }
+            ]
+        }
+    ]
+}
+EOF
+
     if [ "x${IP}" = "x192.168.50.103" ]; then
         consul agent -bootstrap-expect 1 -config-dir /etc/consul.d -bind="${IP}" &
     else
