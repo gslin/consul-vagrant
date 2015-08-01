@@ -17,6 +17,20 @@ work() {
     IP=$(ifconfig eth1 | grep -E -o '192\.168\.50\.10[0-9]')
 
     mkdir /etc/consol.d
+    cat > /etc/consol.d/config.json <<EOF
+{
+    "data_dir": "/tmp/consol",
+    "domain": "consul.kkcorp.",
+    "enable_syslog": true,
+    "ports": {
+        "dns": 53
+    },
+    "recursors": [
+        "8.8.8.8"
+    ],
+    "server": true
+}
+EOF
 
     consul agent -data-dir /tmp/consul -config-dir /etc/consol.d -bind="${IP}" &
     sleep 1
