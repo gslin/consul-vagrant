@@ -19,7 +19,7 @@ work() {
     mkdir /etc/consul.d
     cat > /etc/consul.d/config.json <<EOF
 {
-    "data_dir": "/tmp/consol",
+    "data_dir": "/tmp/consul",
     "domain": "consul.kkcorp.",
     "enable_syslog": true,
     "ports": {
