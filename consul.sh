@@ -17,6 +17,7 @@ work() {
     IP=$(ifconfig eth1 | grep -E -o '192\.168\.50\.10[0-9]')
 
     mkdir /etc/consul.d
+
     cat > /etc/consul.d/config.json <<EOF
 {
     "data_dir": "/tmp/consul",
