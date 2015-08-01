@@ -32,7 +32,12 @@ work() {
 }
 EOF
 
-    consul agent -config-dir /etc/consol.d -bind="${IP}" &
+    if [ "x${IP}" = "x192.168.50.103" ]; then
+        consul agent -bootstrap-expect 1 -config-dir /etc/consol.d -bind="${IP}" &
+    else
+        consul agent -config-dir /etc/consol.d -bind="${IP}" &
+    fi
+
     sleep 1
     consul join 192.168.50.101 || true
     consul join 192.168.50.102 || true
