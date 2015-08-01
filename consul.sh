@@ -32,7 +32,7 @@ work() {
 }
 EOF
 
-    consul agent -data-dir /tmp/consul -config-dir /etc/consol.d -bind="${IP}" &
+    consul agent -config-dir /etc/consol.d -bind="${IP}" &
     sleep 1
     consul join 192.168.50.101 || true
     consul join 192.168.50.102 || true
