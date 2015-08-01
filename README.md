@@ -26,4 +26,4 @@ License
 
 http://opensource.org/licenses/BSD-3-Clause
 
-2014, Gea-Suan Lin &lt;gslin@kkbox.com>, KKBOX.
+2015, Gea-Suan Lin &lt;gslin@kkbox.com>, KKBOX.
