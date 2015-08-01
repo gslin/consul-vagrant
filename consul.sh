@@ -16,8 +16,8 @@ work() {
     local IP
     IP=$(ifconfig eth1 | grep -E -o '192\.168\.50\.10[0-9]')
 
-    mkdir /etc/consol.d
-    cat > /etc/consol.d/config.json <<EOF
+    mkdir /etc/consul.d
+    cat > /etc/consul.d/config.json <<EOF
 {
     "data_dir": "/tmp/consol",
     "domain": "consul.kkcorp.",
@@ -33,9 +33,9 @@ work() {
 EOF
 
     if [ "x${IP}" = "x192.168.50.103" ]; then
-        consul agent -bootstrap-expect 1 -config-dir /etc/consol.d -bind="${IP}" &
+        consul agent -bootstrap-expect 1 -config-dir /etc/consul.d -bind="${IP}" &
     else
-        consul agent -config-dir /etc/consol.d -bind="${IP}" &
+        consul agent -config-dir /etc/consul.d -bind="${IP}" &
     fi
 
     sleep 1
