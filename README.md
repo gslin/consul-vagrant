@@ -4,7 +4,7 @@ Consul Vagrantfile
 Overview
 --------
 
-This <code>Vagrantfile</code> will install a Consul 0.5.2.
+This <code>Vagrantfile</code> will install a Consul 0.6.3.
 
 Tested on Vagrant 1.7.4 (w/ VirtualBox).
 
