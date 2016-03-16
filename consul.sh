@@ -10,7 +10,7 @@ work() {
     apt-get -Vy install unzip
 
     wait
-    unzip 0.6.3_linux_amd64.zip
+    unzip consul_0.6.3_linux_amd64.zip
     mv consul /usr/bin
 
     local IP
