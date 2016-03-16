@@ -4,7 +4,7 @@ work() {
     sed -i -e 's/archive.ubuntu.com/tw.archive.ubuntu.com/' /etc/apt/sources.list
 
     cd /tmp
-    wget https://dl.bintray.com/mitchellh/consul/0.6.3_linux_amd64.zip &
+    wget https://releases.hashicorp.com/consul/0.6.3/consul_0.6.3_linux_amd64.zip &
 
     apt-get -Vy update
     apt-get -Vy install unzip
