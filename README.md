@@ -11,7 +11,7 @@ Tested on Vagrant 1.7.4 (w/ VirtualBox).
 Configuration
 -------------
 
-Base system will be <code>ubuntu/trusty64</code>.
+Base system is <code>ubuntu/trusty64</code>.
 
 Network settings will be:
 
